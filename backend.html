@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Backend Development Roadmap & Resources</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0; padding: 25px; min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: #e0e7ff;
+}
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #dbeafe;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+h1 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; }
+.intro {
+  font-size: 1.3rem; font-weight: 600; margin-bottom: 12px;
+  max-width: 720px; margin-left: auto; margin-right: auto;
+  line-height: 1.3; color: #cceeff;
+}
+.encourage {
+  font-style: italic; color: #88ccee; margin-bottom: 42px;
+}
+.resources-box {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 18px 28px;
+  background: rgba(79,169,219,0.2);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  color: #b0d6f8;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.resources-box a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 0 18px;
+  transition: color 0.3s ease;
+}
+.resources-box a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+.cycle {
+  background: #144766;
+  border-radius: 16px;
+  padding: 28px 35px;
+  margin-bottom: 28px;
+  box-shadow: 0 15px 40px rgba(20,71,102,0.9);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #71c7ec;
+}
+.cycle:hover {
+  box-shadow: 0 22px 50px rgba(33,98,139,1);
+  border-color: #a7d8ff;
+}
+.cycle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  margin-bottom: 22px;
+}
+.cycle-header h2 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #a7d8ff;
+  text-shadow: 0 1px 5px rgba(134,192,225,0.6);
+  transition: color 0.3s ease;
+}
+.cycle-header:hover h2,
+.cycle-header:focus h2 {
+  color: #d9f0ff;
+  text-shadow: 0 2px 10px rgba(195,237,255,0.8);
+}
+.toggle-btn {
+  background: #4fa9db;
+  border: none;
+  color: #144766;
+  font-size: 1.9rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  box-shadow: 0 7px 22px rgba(79,169,219,0.9);
+  transition: background-color 0.3s ease, transform 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.toggle-btn:hover {
+  background: #287bb5;
+  color: white;
+  transform: scale(1.3);
+  box-shadow: 0 12px 30px rgba(40,123,181,1);
+}
+.cycle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease;
+  line-height: 1.75;
+  color: #cceeff;
+  font-size: 1.12rem;
+}
+.cycle-content.open {
+  max-height: 2000px;
+}
+.cycle-content ul {
+  padding-left: 28px;
+  margin-top: 14px;
+}
+.cycle-content li {
+  margin-bottom: 16px;
+}
+a {
+  color: #4fa9db;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #d9f0ff;
+  text-decoration: underline;
+}
+.project-title {
+  font-weight: 800;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a7d8ff;
+  text-shadow: 0 1px 6px rgba(167,216,255,0.75);
+}
+.time-management {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #8ecef8;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.progress-bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 12px;
+  border-radius: 0 0 16px 16px;
+  background: #4fa9db;
+  transition: width 0.5s ease;
+  width: 0;
+}
+@media (max-width: 680px) {
+  body { padding: 18px; }
+  .cycle { padding: 26px 28px; }
+  .cycle-header h2 { font-size: 1.5rem; }
+  .toggle-btn { width: 48px; height: 48px; font-size: 1.6rem; }
+  .time-management { font-size: 1rem; }
+  .project-title { font-size: 1.2rem; }
+  .resources-box a { margin: 0 10px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Backend Development Roadmap & Resources</h1>
+  <p class="intro">Master backend development in 10 structured cycles with practical projects and courses.</p>
+  <p class="encourage">Advance your backend skills steadily with guided tutorials and real projects.</p>
+</header>
+
+<div class="resources-box" role="region" aria-label="Important Tamil backend tutorial links">
+  <a href="https://youtu.be/lBggLSG1w5g?si=RxXbdg3drfZ543Pv" target="_blank" rel="noopener">Node JS Tamil Tutorial</a> | 
+  <a href="https://youtu.be/KUoBYPMbaps?si=XYq2cgByAYs4_i4p" target="_blank" rel="noopener">Express JS Tamil Tutorial</a>
+</div>
+
+<!-- Cycle 1 -->
+<div class="cycle" data-progress="10">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b1">
+    <h2>Cycle 1 (Days 1–10): Node.js Fundamentals</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 1">+</button>
+  </div>
+  <div class="cycle-content" id="content-b1" aria-hidden="true">
+    <p class="time-management">Node.js basics (5h), HTTP server fundamentals (5h)</p>
+    <p class="project-title">Project:</p>
+    <p>Build a basic Node.js HTTP server</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://nodejs.org/en/docs/" target="_blank">Official Node.js Documentation</a></li>
+      <li><a href="https://youtu.be/lBggLSG1w5g?si=RxXbdg3drfZ543Pv" target="_blank" rel="noopener">JVL Code Tamil Node.js Crash Course 2025</a></li>
+      <li><a href="https://www.youtube.com/watch?v=U8XF6AFGqlc" target="_blank" rel="noopener">Node.js Tutorial for Beginners (English)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 2 -->
+<div class="cycle" data-progress="20">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b2">
+    <h2>Cycle 2 (Days 11–20): Express.js & REST APIs</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 2">+</button>
+  </div>
+  <div class="cycle-content" id="content-b2" aria-hidden="true">
+    <p class="time-management">Express basics (4h), REST API fundamentals (6h)</p>
+    <p class="project-title">Project:</p>
+    <p>Create a RESTful user management API</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://expressjs.com/en/starter/hello-world.html" target="_blank">Express.js Guide</a></li>
+      <li><a href="https://youtu.be/KUoBYPMbaps?si=XYq2cgByAYs4_i4p" target="_blank" rel="noopener">JVL Code Tamil Express JS for Beginners</a></li>
+      <li><a href="https://www.youtube.com/watch?v=Q-BpqyOT3a8" target="_blank">REST API Tutorial (English)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 3 -->
+<div class="cycle" data-progress="30">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b3">
+    <h2>Cycle 3 (Days 21–30): Middleware & Error Handling</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 3">+</button>
+  </div>
+  <div class="cycle-content" id="content-b3" aria-hidden="true">
+    <p class="time-management">Middleware concepts (5h), Express error handling (5h)</p>
+    <p class="project-title">Project:</p>
+    <p>Implement error handling middleware in Express</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://nodejs.org/en/docs/guides/error-handling-best-practices/" target="_blank">Node.js Error Handling Guide</a></li>
+      <li><a href="https://expressjs.com/en/guide/error-handling.html" target="_blank">Express.js Error Handling</a></li>
+      <li><a href="https://youtu.be/KUoBYPMbaps?si=XYq2cgByAYs4_i4p" target="_blank">Express JS Tutorial (Tamil)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 4 -->
+<div class="cycle" data-progress="40">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b4">
+    <h2>Cycle 4 (Days 31–40): Authentication & Authorization</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 4">+</button>
+  </div>
+  <div class="cycle-content" id="content-b4" aria-hidden="true">
+    <p class="time-management">Auth fundamentals (6h), JWT implementation (4h)</p>
+    <p class="project-title">Project:</p>
+    <p>User authentication with JWT</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://jwt.io/introduction/" target="_blank">JWT Official Site</a></li>
+      <li><a href="https://www.npmjs.com/package/passport" target="_blank">Passport.js Documentation</a></li>
+      <li><a href="https://youtu.be/lBggLSG1w5g?si=RxXbdg3drfZ543Pv" target="_blank">JVL Code Tamil Node.js Crash Course (Auth section)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 5 -->
+<div class="cycle" data-progress="50">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b5">
+    <h2>Cycle 5 (Days 41–50): File Upload & Session Management</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 5">+</button>
+  </div>
+  <div class="cycle-content" id="content-b5" aria-hidden="true">
+    <p class="time-management">File uploads (5h), session and cookie management (5h)</p>
+    <p class="project-title">Project:</p>
+    <p>User file upload and session persistence</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.npmjs.com/package/multer" target="_blank">Multer for File Uploads</a></li>
+      <li><a href="https://expressjs.com/en/resources/middleware/session.html" target="_blank">Express Session Middleware</a></li>
+      <li><a href="https://youtu.be/KUoBYPMbaps?si=XYq2cgByAYs4_i4p" target="_blank">Express JS Tamil Tutorial</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 6 -->
+<div class="cycle" data-progress="60">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b6">
+    <h2>Cycle 6 (Days 51–60): Real-time Communication with WebSockets</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 6">+</button>
+  </div>
+  <div class="cycle-content" id="content-b6" aria-hidden="true">
+    <p class="time-management">WebSocket basics (6h), implement Socket.IO (4h)</p>
+    <p class="project-title">Project:</p>
+    <p>Real-time chat or notification application</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://socket.io/docs/v4" target="_blank">Socket.IO Docs</a></li>
+      <li><a href="https://www.youtube.com/watch?v=vQjiN8Qgs3c" target="_blank">Socket.IO Crash Course (English)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 7 -->
+<div class="cycle" data-progress="70">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b7">
+    <h2>Cycle 7 (Days 61–70): Testing & Debugging Backend</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 7">+</button>
+  </div>
+  <div class="cycle-content" id="content-b7" aria-hidden="true">
+    <p class="time-management">Unit testing (5h), integration testing (5h)</p>
+    <p class="project-title">Project:</p>
+    <p>Write unit and integration tests for APIs</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://jestjs.io/docs/getting-started" target="_blank">Jest Docs</a></li>
+      <li><a href="https://mochajs.org/" target="_blank">Mocha Docs</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 8 -->
+<div class="cycle" data-progress="80">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b8">
+    <h2>Cycle 8 (Days 71–80): Deployment & DevOps Basics</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 8">+</button>
+  </div>
+  <div class="cycle-content" id="content-b8" aria-hidden="true">
+    <p class="time-management">Learn deployment on Heroku, Vercel; introduction to CI/CD (10h)</p>
+    <p class="project-title">Project:</p>
+    <p>Deploy backend API with automated deployment pipelines</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" target="_blank">Heroku Node.js Deployment</a></li>
+      <li><a href="https://vercel.com/docs" target="_blank">Vercel Docs</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 9 -->
+<div class="cycle" data-progress="90">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b9">
+    <h2>Cycle 9 (Days 81–90): Final Project Planning & Implementation</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 9">+</button>
+  </div>
+  <div class="cycle-content" id="content-b9" aria-hidden="true">
+    <p class="time-management">Plan (3h), Build (5h), Testing (2h)</p>
+    <p class="project-title">Project:</p>
+    <p>Create a complete backend service with authentication, error handling & deployment</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li>Reviewed tutorials and documentation from previous cycles</li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 10 -->
+<div class="cycle" data-progress="100">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-b10">
+    <h2>Cycle 10 (Days 91–100): Advanced Optimizations & Security</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 10">+</button>
+  </div>
+  <div class="cycle-content" id="content-b10" aria-hidden="true">
+    <p class="time-management">Performance tuning (5h), security best practices (5h)</p>
+    <p class="project-title">Project:</p>
+    <p>Optimize and secure your backend APIs for production</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://expressjs.com/en/advanced/best-practice-security.html" target="_blank">Express Security Best Practices</a></li>
+      <li><a href="https://nodesource.com/blog/securing-your-node-js-web-application/" target="_blank">Node.js Security Tips</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<script>
+document.querySelectorAll('.cycle-header').forEach(header => {
+  const btn = header.querySelector('.toggle-btn');
+  const content = header.nextElementSibling;
+  const container = header.parentElement;
+  const progress = container.querySelector('.progress-bar');
+
+  function toggle() {
+    const open = content.classList.toggle('open');
+    btn.textContent = open ? '−' : '+';
+    if (open && container.dataset.progress) {
+      progress.style.width = container.dataset.progress + '%';
+    } else {
+      progress.style.width = '0%';
+    }
+  }
+
+  header.addEventListener('click', toggle);
+  header.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
+  });
+});
+</script>
+
+</body>
+</html>

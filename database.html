@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Database Learning Roadmap & Resources</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0; padding: 25px; min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #d0f0fd;
+}
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #b2dffc;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+h1 {
+  font-size: 3.3rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.intro {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 36px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.3;
+  color: #cceeff;
+}
+.encourage {
+  font-style: italic;
+  color: #88ccee;
+  margin-bottom: 48px;
+}
+.resources-box {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 18px 28px;
+  background: rgba(71,130,255,0.15);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  color: #cceeff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.resources-box a {
+  color: #a7d8ff;
+  font-weight: 800;
+  text-decoration: underline;
+  margin: 0 16px;
+  transition: color 0.3s ease;
+  font-size: 1.3rem;
+  text-shadow: 0 0 6px #74aaff;
+}
+.resources-box a:hover {
+  color: #e0f0ff;
+  text-shadow: 0 0 12px #a2c7ff, 0 0 20px #496eff;
+}
+.cycle {
+  background: #144766;
+  border-radius: 16px;
+  padding: 28px 35px;
+  margin-bottom: 28px;
+  box-shadow: 0 18px 45px rgba(20,71,102,0.85);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #71c7ec;
+}
+.cycle:hover {
+  box-shadow: 0 26px 58px rgba(33,98,139,1);
+  border-color: #a7d8ff;
+}
+.cycle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  margin-bottom: 22px;
+}
+.cycle-header h2 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #a7d8ff;
+  text-shadow: 0 1px 5px rgba(134,192,225,0.6);
+  transition: color 0.3s ease;
+}
+.cycle-header:hover h2,
+.cycle-header:focus h2 {
+  color: #d9f0ff;
+  text-shadow: 0 2px 10px rgba(195,237,255,0.8);
+}
+.toggle-btn {
+  background: #4fa9db;
+  border: none;
+  color: #144766;
+  font-size: 1.9rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  box-shadow: 0 7px 22px rgba(79,169,219,0.9);
+  transition: background-color 0.3s ease, transform 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.toggle-btn:hover {
+  background: #287bb5;
+  color: white;
+  transform: scale(1.3);
+  box-shadow: 0 12px 30px rgba(40,123,181,1);
+}
+.cycle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease;
+  line-height: 1.75;
+  color: #cceeff;
+  font-size: 1.12rem;
+}
+.cycle-content.open {
+  max-height: 2200px;
+}
+.cycle-content ul {
+  padding-left: 28px;
+  margin-top: 14px;
+}
+.cycle-content li {
+  margin-bottom: 16px;
+}
+a {
+  color: #74aaff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #bbd9ff;
+  text-decoration: underline;
+}
+.project-title {
+  font-weight: 800;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #91bfff;
+  text-shadow: 0 1px 6px rgba(144,203,255,0.75);
+}
+.time-management {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #a5ceff;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.progress-bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 12px;
+  border-radius: 0 0 16px 16px;
+  background: #4fa9db;
+  transition: width 0.5s ease;
+  width: 0;
+}
+@media (max-width: 680px) {
+  body { padding: 18px; }
+  .cycle { padding: 26px 28px; }
+  .cycle-header h2 { font-size: 1.5rem; }
+  .toggle-btn { width: 48px; height: 48px; font-size: 1.6rem; }
+  .time-management { font-size: 1rem; }
+  .project-title { font-size: 1.2rem; }
+  .resources-box a { margin: 0 10px; font-size: 1.2rem; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Database Learning Roadmap & Resources</h1>
+  <p class="intro">Master databases with practical projects and high-quality tutorials structured in 10 cycles.</p>
+  <p class="encourage">Develop robust data skills consistently to build strong backend foundations.</p>
+</header>
+
+<div class="resources-box" role="region" aria-label="Important Tamil database tutorial links">
+  <a href="https://youtube.com/playlist?list=PLvepBxfiuao2y4Pgdfregh7hOpxaJ5oxd&si=qbp1_RNSVWl8t1G_" target="_blank" rel="noopener">SQL Tamil Tutorial Playlist</a> |
+  <a href="https://youtu.be/Otdxk0Mmdmo?si=E7XiTYlyxMB2Q1cZ" target="_blank" rel="noopener">MongoDB Tamil Tutorial</a>
+</div>
+
+<!-- Cycle 1 -->
+<div class="cycle" data-progress="10">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d1">
+    <h2>Cycle 1 (Days 1–10): Introduction to Databases & SQL Basics</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 1">+</button>
+  </div>
+  <div class="cycle-content" id="content-d1" aria-hidden="true">
+    <p class="time-management">SQL syntax and basic queries (3h), schema design basics (4h), hands-on practice (3h)</p>
+    <p class="project-title">Project:</p>
+    <p>Design and query a simple relational database schema</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.w3schools.com/sql/" target="_blank">W3Schools SQL Tutorial</a></li>
+      <li><a href="https://www.postgresql.org/docs/" target="_blank">PostgreSQL Official Docs</a></li>
+      <li><a href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank">SQL Tutorial for Beginners</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 2 -->
+<div class="cycle" data-progress="20">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d2">
+    <h2>Cycle 2 (Days 11–20): Advanced SQL & Normalization</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 2">+</button>
+  </div>
+  <div class="cycle-content" id="content-d2" aria-hidden="true">
+    <p class="time-management">Normalization theory (3h), complex queries (4h), relations and constraints (3h)</p>
+    <p class="project-title">Project:</p>
+    <p>Normalize database tables and execute complex SQL queries</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/database-normalization-in-dbms/" target="_blank">Normalization Guide</a></li>
+      <li><a href="https://www.youtube.com/watch?v=9jj3ZZpJ2tQ" target="_blank">Database Normalization Explained</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 3 -->
+<div class="cycle" data-progress="30">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d3">
+    <h2>Cycle 3 (Days 21–30): NoSQL & MongoDB Basics</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 3">+</button>
+  </div>
+  <div class="cycle-content" id="content-d3" aria-hidden="true">
+    <p class="time-management">Intro to NoSQL (3h), MongoDB CRUD (4h), data modeling (3h)</p>
+    <p class="project-title">Project:</p>
+    <p>Implement CRUD operations using MongoDB</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://university.mongodb.com/" target="_blank">MongoDB University Courses</a></li>
+      <li><a href="https://docs.mongodb.com/manual/tutorial/getting-started/" target="_blank">MongoDB Official Tutorial</a></li>
+      <li><a href="https://youtu.be/Otdxk0Mmdmo?si=E7XiTYlyxMB2Q1cZ" target="_blank">MongoDB Tamil Full Tutorial</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 4 -->
+<div class="cycle" data-progress="40">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d4">
+    <h2>Cycle 4 (Days 31–40): Indexing & Performance Tuning</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 4">+</button>
+  </div>
+  <div class="cycle-content" id="content-d4" aria-hidden="true">
+    <p class="time-management">Indexing principles (4h), applying indexes (3h), query optimization (3h)</p>
+    <p class="project-title">Project:</p>
+    <p>Optimize queries with indexes on relational and NoSQL databases</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://use-the-index-luke.com/" target="_blank">SQL Indexing Guide</a></li>
+      <li><a href="https://www.mongodb.com/blog/post/performance-tuning-mongodb-indexing-best-practices" target="_blank">MongoDB Index Optimization</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 5 -->
+<div class="cycle" data-progress="50">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d5">
+    <h2>Cycle 5 (Days 41–50): Transactions & Concurrency</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 5">+</button>
+  </div>
+  <div class="cycle-content" id="content-d5" aria-hidden="true">
+    <p class="time-management">Transactions concepts (3h), SQL & MongoDB transactions (7h)</p>
+    <p class="project-title">Project:</p>
+    <p>Implement transactions managing concurrency</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.postgresql.org/docs/current/tutorial-transactions.html" target="_blank">PostgreSQL Transactions</a></li>
+      <li><a href="https://docs.mongodb.com/manual/core/transactions/" target="_blank">MongoDB Transactions</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 6 -->
+<div class="cycle" data-progress="60">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d6">
+    <h2>Cycle 6 (Days 51–60): Backup & Recovery Techniques</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 6">+</button>
+  </div>
+  <div class="cycle-content" id="content-d6" aria-hidden="true">
+    <p class="time-management">Backup strategies (4h), recovery methods (3h), practical backup & restore (3h)</p>
+    <p class="project-title">Project:</p>
+    <p>Implement database backup and restore solutions</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.postgresql.org/docs/current/backup-dump.html" target="_blank">PostgreSQL Backup & Restore</a></li>
+      <li><a href="https://docs.mongodb.com/manual/core/backups/" target="_blank">MongoDB Backup Strategies</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 7 -->
+<div class="cycle" data-progress="70">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d7">
+    <h2>Cycle 7 (Days 61–70): Database Security Best Practices</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 7">+</button>
+  </div>
+  <div class="cycle-content" id="content-d7" aria-hidden="true">
+    <p class="time-management">Access control (3h), encryption (4h), monitoring (3h)</p>
+    <p class="project-title">Project:</p>
+    <p>Implement secure access and encryption</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.owasp.org/index.php/Top_10-2021_Top_10" target="_blank">OWASP Top 10</a></li>
+      <li><a href="https://www.postgresql.org/docs/current/auth-methods.html" target="_blank">PostgreSQL Authentication</a></li>
+      <li><a href="https://docs.mongodb.com/manual/security/" target="_blank">MongoDB Security Guide</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 8 -->
+<div class="cycle" data-progress="80">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d8">
+    <h2>Cycle 8 (Days 71–80): Replication & High Availability</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 8">+</button>
+  </div>
+  <div class="cycle-content" id="content-d8" aria-hidden="true">
+    <p class="time-management">Replication concepts (4h), replica sets setup (3h), failover (3h)</p>
+    <p class="project-title">Project:</p>
+    <p>Configure replication for PostgreSQL and MongoDB</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.mongodb.com/docs/manual/replication/" target="_blank">MongoDB Replication</a></li>
+      <li><a href="https://www.postgresql.org/docs/current/high-availability.html" target="_blank">PostgreSQL HA</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 9 -->
+<div class="cycle" data-progress="90">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d9">
+    <h2>Cycle 9 (Days 81–90): Performance Tuning & Monitoring</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 9">+</button>
+  </div>
+  <div class="cycle-content" id="content-d9" aria-hidden="true">
+    <p class="time-management">Performance tuning strategies (5h), monitoring tools (5h)</p>
+    <p class="project-title">Project:</p>
+    <p>Optimize performance and implement monitoring</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.postgresql.org/docs/current/runtime-config-statistics.html" target="_blank">PostgreSQL Statistics</a></li>
+      <li><a href="https://www.datadoghq.com/blog/database-monitoring/" target="_blank">Database Monitoring Guide</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 10 -->
+<div class="cycle" data-progress="100">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-d10">
+    <h2>Cycle 10 (Days 91–100): Final Database Project</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 10">+</button>
+  </div>
+  <div class="cycle-content" id="content-d10" aria-hidden="true">
+    <p class="time-management">Final project: design, implement, optimize backend DB app (10h)</p>
+    <p class="project-title">Project:</p>
+    <p>Build and deploy a complete database-backed application</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li>Review prior cycles' materials</li>
+      <li><a href="https://www.postgresql.org/docs/current/tutorial.html" target="_blank">PostgreSQL Tutorial</a></li>
+      <li><a href="https://docs.mongodb.com/manual/tutorial/" target="_blank">MongoDB Tutorial</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<script>
+document.querySelectorAll('.cycle-header').forEach(header => {
+  const btn = header.querySelector('.toggle-btn');
+  const content = header.nextElementSibling;
+  const container = header.parentElement;
+  const progress = container.querySelector('.progress-bar');
+
+  function toggle() {
+    const open = content.classList.toggle('open');
+    btn.textContent = open ? '−' : '+';
+    if (open && container.dataset.progress) {
+      progress.style.width = container.dataset.progress + '%';
+    } else {
+      progress.style.width = '0%';
+    }
+  }
+
+  header.addEventListener('click', toggle);
+  header.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
+  });
+});
+</script>
+
+</body>
+</html>

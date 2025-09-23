@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learning Platform - Start</title>
+<style>
+body {
+  margin: 0; padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(30,41,59,0.85), rgba(59,130,246,0.75)),
+    url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+  flex-direction: column;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.quote {
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  max-width: 400px;
+  line-height: 1.4;
+  color: #dbeafe;
+  text-shadow: 0 0 6px rgba(59,130,246,0.7);
+  user-select: none;
+}
+.start-btn {
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 16px 40px;
+  background-color: #1e40af;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.75);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.05em;
+}
+.start-btn:hover {
+  background-color: #2563eb;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.95);
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+<div>
+  <h1>Welcome to Learning</h1>
+  <p class="quote">"The best way to learn coding is by practicing consistently and solving real problems every day."</p>
+  <button class="start-btn" id="startBtn">Start</button>
+</div>
+
+<script>
+  document.getElementById('startBtn').addEventListener('click', () => {
+    window.location.href = 'login.html';
+  });
+</script>
+</body>
+</html>

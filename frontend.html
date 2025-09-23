@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Frontend Development Roadmap & Resources</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0; padding: 25px; min-height: 100vh;
+  background: linear-gradient(135deg, #203a72, #4864a0);
+  color: #e0e7ff;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #cbd5e1;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+
+h1 {
+  font-size: 3.3rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.intro {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 36px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.3;
+  color: #cbd5e1;
+}
+
+.encourage {
+  font-style: italic;
+  color: #94a3b8;
+  margin-bottom: 48px;
+}
+
+.resources-box {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 20px 30px;
+  background: rgba(59, 130, 246, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.7);
+  color: #bfdbfe;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.resources-box a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.resources-box a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.cycle {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 28px 35px;
+  margin-bottom: 28px;
+  box-shadow: 0 20px 50px rgba(28,41,70,0.9);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #3b82f6;
+}
+
+.cycle:hover {
+  box-shadow: 0 26px 58px rgba(33,56,101,1);
+  border-color: #60a5fa;
+}
+
+.cycle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  margin-bottom: 22px;
+}
+
+.cycle-header h2 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #93c5fd;
+  text-shadow: 0 1px 6px rgba(101,150,255,0.8);
+  transition: color 0.3s ease;
+}
+
+.cycle-header:hover h2,
+.cycle-header:focus h2 {
+  color: #60a5fa;
+  text-shadow: 0 3px 12px rgba(143,172,255,1);
+}
+
+.toggle-btn {
+  background: #3b82f6;
+  border: none;
+  color: white;
+  font-size: 1.85rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  box-shadow: 0 7px 22px rgba(59,130,246,0.9);
+  transition: background-color 0.3s ease, transform 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.toggle-btn:hover {
+  background: #2563eb;
+  transform: scale(1.3);
+  box-shadow: 0 12px 28px rgba(37,99,235,1);
+}
+
+.cycle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease;
+  line-height: 1.8;
+  color: #cbd5e1;
+  font-size: 1.12rem;
+}
+
+.cycle-content.open {
+  max-height: 2000px;
+}
+
+.cycle-content ul {
+  padding-left: 28px;
+  margin-top: 15px;
+}
+
+.cycle-content li {
+  margin-bottom: 16px;
+}
+
+a {
+  color: #60a5fa;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.project-title {
+  font-weight: 800;
+  margin-top: 22px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #a5b4fc;
+  text-shadow: 0 1px 5px rgba(165,180,252,0.6);
+}
+
+.time-management {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #94a3b8;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 10px;
+  border-radius: 0 0 16px 16px;
+  background: #3b82f6;
+  transition: width 0.5s ease;
+  width: 0;
+}
+
+@media (max-width: 680px) {
+  body { padding: 15px; }
+  .cycle { padding: 25px 28px; }
+  .cycle-header h2 { font-size: 1.38rem; }
+  .toggle-btn { width: 48px; height: 48px; font-size: 1.6rem; }
+  .time-management { font-size: 1rem; }
+  .project-title { font-size: 1.2rem; }
+  .resources-box a { margin: 0 10px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Frontend Development Roadmap & Resources</h1>
+  <p class="intro">Master frontend development with structured cycles, projects, and trusted English resources.</p>
+  <p class="encourage">Dedicate time daily for skill growth and project completion!</p>
+</header>
+
+<div class="resources-box" role="region" aria-label="Important tutorial links">
+  <a href="https://youtu.be/7dSJubxFWv0?si=OLvQ22pmAdTx9ls-" target="_blank" rel="noopener">Frontend Tamil Tutorial</a> | 
+  <a href="https://youtu.be/EVdh8DCLnA0?si=uMJYN1xcxsZ5GZrJ" target="_blank" rel="noopener">React JS Tamil Tutorial</a>
+</div>
+
+<!-- Cycle 1: HTML & CSS Basics -->
+<div class="cycle" data-progress="10">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-1">
+    <h2>Cycle 1 (Days 1–10): HTML & CSS Basics</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 1">+</button>
+  </div>
+  <div class="cycle-content" id="content-1" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>HTML Tags (headings, lists, images, links, forms) – 1h</li>
+      <li>HTML Semantic Elements (&lt;header&gt;, &lt;main&gt;, &lt;footer&gt;, etc.) – 0.5h</li>
+      <li>HTML Tables & Iframes (&lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;iframe&gt;) – 0.5h</li>
+      <li>Forms & Input Types – 1h</li>
+      <li>CSS Selectors & Syntax – 1h</li>
+      <li>Box Model – 0.5h</li>
+      <li>Colors, Backgrounds – 0.5h</li>
+      <li>Typography – 0.5h</li>
+      <li>Simple Portfolio Project – 3h</li>
+    </ul>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Docs</a></li>
+      <li><a href="https://www.geeksforgeeks.org/html/frontend-developer-roadmap/" target="_blank">GFG Frontend Roadmap</a></li>
+      <li><a href="https://learn.shayhowe.com/html-css/" target="_blank">Shay Howe Learn HTML & CSS</a></li>
+      <li><a href="https://htmlcheatsheet.com/" target="_blank">HTML Cheat Sheet</a></li>
+      <li><a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS Tutorial</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Docs</a></li>
+      <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+      <li><a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank">HTML & CSS for Beginners (YouTube)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 2: Flexbox & CSS Grid -->
+<div class="cycle" data-progress="20">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-2">
+    <h2>Cycle 2 (Days 11–20): Flexbox & CSS Grid</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 2">+</button>
+  </div>
+  <div class="cycle-content" id="content-2" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>Flexbox Concepts – 2h</li>
+      <li>Flexbox Properties – 2h</li>
+      <li>CSS Grid Concepts – 2h</li>
+      <li>Grid Properties – 1h</li>
+    </ul>
+    <p class="project-title">Project: Responsive Landing Page</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS-Tricks Flexbox Guide</a></li>
+      <li><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy Game</a></li>
+      <li><a href="https://www.youtube.com/watch?v=3YW65K6LcIA" target="_blank">Flexbox Crash Course (YouTube)</a></li>
+      <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS-Tricks Grid Guide</a></li>
+      <li><a href="https://gridgarden.game/" target="_blank">Grid Garden Game</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">MDN CSS Grid Docs</a></li>
+      <li><a href="https://www.freecodecamp.org/news/css-grid-tutorial/" target="_blank">freeCodeCamp CSS Grid Tutorial</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 3: JavaScript Fundamentals -->
+<div class="cycle" data-progress="30">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-3">
+    <h2>Cycle 3 (Days 21–30): JavaScript Fundamentals</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 3">+</button>
+  </div>
+  <div class="cycle-content" id="content-3" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>JS Syntax & Variables – 2h</li>
+      <li>Operators, Control Structures – 1.5h</li>
+      <li>Functions & Scope – 1h</li>
+      <li>Arrays & Objects – 1h</li>
+      <li>DOM Manipulation – 1.5h</li>
+    </ul>
+    <p class="project-title">Project: Interactive To-Do List App</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">MDN JavaScript Guide</a></li>
+      <li><a href="https://www.javascript.com/learn" target="_blank">Learn JavaScript</a></li>
+      <li><a href="https://www.w3schools.com/js/" target="_blank">W3Schools JS Tutorial</a></li>
+      <li><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank">freeCodeCamp JS Course</a></li>
+      <li><a href="https://www.geeksforgeeks.org/javascript/" target="_blank">GFG JS Tutorial</a></li>
+      <li><a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" target="_blank">JavaScript Basics (YouTube, freeCodeCamp)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 4: Advanced DOM & Events -->
+<div class="cycle" data-progress="40">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-4">
+    <h2>Cycle 4 (Days 31–40): Advanced DOM and Event Handling</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 4">+</button>
+  </div>
+  <div class="cycle-content" id="content-4" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>DOM Traversing – 2h</li>
+      <li>Event Listeners – 2h</li>
+      <li>Event Propagation – 1h</li>
+      <li>Animations & Effects – 2h</li>
+    </ul>
+    <p class="project-title">Project: Animated Interactive Application</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank">MDN DOM Docs</a></li>
+      <li><a href="https://javascript.info/events" target="_blank">JavaScript Events</a></li>
+      <li><a href="https://www.w3schools.com/js/js_events.asp" target="_blank">W3Schools Events</a></li>
+      <li><a href="https://css-tricks.com/almanac/properties/a/animation/" target="_blank">CSS-Tricks Animation Guide</a></li>
+      <li><a href="https://www.geeksforgeeks.org/javascript-events/" target="_blank">GFG JS Events</a></li>
+      <li><a href="https://www.youtube.com/watch?v=KZp2g_5zI6w" target="_blank">JavaScript DOM Crash Course (YouTube)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 5: ES6 & Async JS -->
+<div class="cycle" data-progress="50">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-5">
+    <h2>Cycle 5 (Days 41–50): ES6 & Asynchronous JS</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 5">+</button>
+  </div>
+  <div class="cycle-content" id="content-5" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>ES6 Features – 1.5h</li>
+      <li>Promises & Async/Await – 2h</li>
+      <li>Fetch API & AJAX – 2h</li>
+      <li>Modules & Imports – 1.5h</li>
+    </ul>
+    <p class="project-title">Project: Weather App using public APIs</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://javascript.info/async" target="_blank">Async JS: The Event Loop</a></li>
+      <li><a href="https://www.geeksforgeeks.org/es6-features/" target="_blank">GFG ES6 Features</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">MDN JS Reference</a></li>
+      <li><a href="https://www.w3schools.com/js/js_es6.asp" target="_blank">W3Schools ES6</a></li>
+      <li><a href="https://www.youtube.com/watch?v=PoRJizFvM7s" target="_blank">Async JS Crash Course (YouTube)</a></li>
+      <li><a href="https://www.freecodecamp.org/news/javascript-promises-explained/" target="_blank">freeCodeCamp Promises Guide</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 6: React Basics -->
+<div class="cycle" data-progress="60">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-6">
+    <h2>Cycle 6 (Days 51–60): React Basics</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 6">+</button>
+  </div>
+  <div class="cycle-content" id="content-6" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>React App Setup – 1h</li>
+      <li>JSX Syntax – 1.5h</li>
+      <li>Components & Props – 2h</li>
+      <li>State & Basic Hooks (useState) – 2.5h</li>
+    </ul>
+    <p class="project-title">Project: Basic React To-Do List</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://reactjs.org/tutorial/tutorial.html" target="_blank">React Official Tutorial</a></li>
+      <li><a href="https://roadmap.sh/frontend" target="_blank">roadmap.sh Frontend</a></li>
+      <li><a href="https://www.geeksforgeeks.org/reactjs-tutorial/" target="_blank">GFG ReactJS Tutorial</a></li>
+      <li><a href="https://www.w3schools.com/react/" target="_blank">W3Schools React Tutorial</a></li>
+      <li><a href="https://www.youtube.com/watch?v=TtPXvEcE11E" target="_blank">React Crash Course (YouTube)</a></li>
+      <li><a href="https://www.freecodecamp.org/news/react-beginner-handbook/" target="_blank">freeCodeCamp React Handbook</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 7: React Routing & Hooks -->
+<div class="cycle" data-progress="70">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-7">
+    <h2>Cycle 7 (Days 61–70): React Routing & Hooks</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 7">+</button>
+  </div>
+  <div class="cycle-content" id="content-7" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>React Router Basics – 2h</li>
+      <li>Advanced Hooks (useEffect, custom hooks) – 2.5h</li>
+      <li>Context API – 2.5h</li>
+    </ul>
+    <p class="project-title">Project: Multi-Page React Portfolio</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://reactrouter.com/en/main" target="_blank">React Router Docs</a></li>
+      <li><a href="https://reactjs.org/docs/hooks-intro.html" target="_blank">React Hooks Guide</a></li>
+      <li><a href="https://www.geeksforgeeks.org/react-context-api/" target="_blank">GFG Context API</a></li>
+      <li><a href="https://www.w3schools.com/react/react_router.asp" target="_blank">W3Schools React Router</a></li>
+      <li><a href="https://www.youtube.com/watch?v=Law7wfdg_ls" target="_blank">React Router Tutorial (YouTube)</a></li>
+      <li><a href="https://www.freecodecamp.org/news/react-hooks-cheatsheet/" target="_blank">freeCodeCamp Hooks Cheatsheet</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 8: Advanced React & Styling -->
+<div class="cycle" data-progress="80">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-8">
+    <h2>Cycle 8 (Days 71–80): Advanced React & Styling</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 8">+</button>
+  </div>
+  <div class="cycle-content" id="content-8" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>State Management (Redux Intro) – 2h</li>
+      <li>Styled Components – 2h</li>
+      <li>SASS Basics – 2h</li>
+      <li>Testing components – 1h</li>
+    </ul>
+    <p class="project-title">Project: E-commerce Product Listing</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" target="_blank">Redux Tutorial</a></li>
+      <li><a href="https://styled-components.com/docs" target="_blank">Styled Components Docs</a></li>
+      <li><a href="https://sass-lang.com/guide" target="_blank">SASS Basics</a></li>
+      <li><a href="https://www.youtube.com/watch?v=9boMnm5X9ak" target="_blank">Redux Crash Course (YouTube)</a></li>
+      <li><a href="https://www.w3schools.com/react/react_redux.asp" target="_blank">W3Schools Redux</a></li>
+      <li><a href="https://www.freecodecamp.org/news/styled-components-in-react/" target="_blank">freeCodeCamp Styled Components</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 9: PWAs & Accessibility -->
+<div class="cycle" data-progress="90">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-9">
+    <h2>Cycle 9 (Days 81–90): Progressive Web Apps & Accessibility</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 9">+</button>
+  </div>
+  <div class="cycle-content" id="content-9" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>PWA Fundamentals – 2.5h</li>
+      <li>Performance Optimization – 2h</li>
+      <li>Accessibility Principles – 2.5h</li>
+    </ul>
+    <p class="project-title">Project: Make your portfolio a PWA</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://web.dev/progressive-web-apps/" target="_blank">PWA Fundamentals (web.dev)</a></li>
+      <li><a href="https://web.dev/fast/" target="_blank">Performance Optimization (web.dev)</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank">MDN Accessibility Docs</a></li>
+      <li><a href="https://www.a11yproject.com/" target="_blank">A11Y Project</a></li>
+      <li><a href="https://www.geeksforgeeks.org/what-are-progressive-web-applications/" target="_blank">GFG PWAs</a></li>
+      <li><a href="https://www.youtube.com/watch?v=qS--Ky0iAlY" target="_blank">PWA Crash Course (YouTube)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<!-- Cycle 10: Final Project & Deployment -->
+<div class="cycle" data-progress="100">
+  <div class="cycle-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content-10">
+    <h2>Cycle 10 (Days 91–100): Final Frontend Project & Deployment</h2>
+    <button class="toggle-btn" aria-label="Toggle Cycle 10">+</button>
+  </div>
+  <div class="cycle-content" id="content-10" aria-hidden="true">
+    <p class="time-management">Total: ~7 hours</p>
+    <ul>
+      <li>Project Planning – 1h</li>
+      <li>Coding & Implementation – 4h</li>
+      <li>Testing & Debugging – 1h</li>
+      <li>Deployment – 1h</li>
+    </ul>
+    <p class="project-title">Project: Complete E-commerce Frontend Site</p>
+    <p class="project-title">Resources:</p>
+    <ul>
+      <li><a href="https://vercel.com/docs" target="_blank">Vercel Deployment Guide</a></li>
+      <li><a href="https://firebase.google.com/docs/hosting" target="_blank">Firebase Hosting Docs</a></li>
+      <li><a href="https://roadmap.sh/frontend" target="_blank">roadmap.sh Frontend</a></li>
+      <li><a href="https://github.com/netlify/netlify-frontend-deployment" target="_blank">Netlify Deployment (GitHub)</a></li>
+      <li><a href="https://www.geeksforgeeks.org/html/frontend-developer-roadmap/" target="_blank">GFG Frontend Roadmap</a></li>
+      <li><a href="https://www.freecodecamp.org/news/front-end-deployment/" target="_blank">freeCodeCamp Frontend Deployment</a></li>
+      <li><a href="https://www.youtube.com/watch?v=5hRvXMJoB8c" target="_blank">Deploy React App (YouTube)</a></li>
+    </ul>
+  </div>
+  <div class="progress-bar"></div>
+</div>
+
+<script>
+document.querySelectorAll('.cycle-header').forEach(header => {
+  const toggleBtn = header.querySelector('.toggle-btn');
+  const content = header.nextElementSibling;
+  const cycle = header.parentElement;
+  const progressBar = cycle.querySelector('.progress-bar');
+
+  function toggleCycle() {
+    const isOpen = content.classList.toggle('open');
+    toggleBtn.textContent = isOpen ? '−' : '+';
+    header.setAttribute('aria-expanded', isOpen);
+    content.setAttribute('aria-hidden', !isOpen);
+    if (isOpen && cycle.dataset.progress) {
+      progressBar.style.width = cycle.dataset.progress + '%';
+    } else {
+      progressBar.style.width = '0%';
+    }
+  }
+
+  header.addEventListener('click', toggleCycle);
+  header.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleCycle();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
